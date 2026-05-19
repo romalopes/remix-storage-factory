@@ -1,0 +1,68 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"sepolia:11155111": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "6080604052348015600e575f5ffd5b50606a80601a5f395ff3fe6080604052348015600e575f5ffd5b50600436106026575f3560e01c80631dda654114602a575b5f5ffd5b60306032565b005b56fea264697066735822122057ffe84a6e94e2eafe4e9a6af2c29df61bd092a4f548fca57c6ddfd6b3c65b9464736f6c634300081e0033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xE JUMPI PUSH0 PUSH0 REVERT JUMPDEST POP PUSH1 0x6A DUP1 PUSH1 0x1A PUSH0 CODECOPY PUSH0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xE JUMPI PUSH0 PUSH0 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH1 0x26 JUMPI PUSH0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x1DDA6541 EQ PUSH1 0x2A JUMPI JUMPDEST PUSH0 PUSH0 REVERT JUMPDEST PUSH1 0x30 PUSH1 0x32 JUMP JUMPDEST STOP JUMPDEST JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 JUMPI SELFDESTRUCT 0xE8 BLOBBASEFEE PUSH15 0x94E2EAFE4E9A6AF2C29DF61BD092A4 CREATE2 BASEFEE 0xFC 0xA5 PUSH29 0x6DDFD6B3C65B9464736F6C634300081E00330000000000000000000000 ",
+			"sourceMap": "110:98:1:-:0;;;;;;;;;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"functionDebugData": {
+				"@createSimpleStorageContract_66": {
+					"entryPoint": 50,
+					"id": 66,
+					"parameterSlots": 0,
+					"returnSlots": 0
+				}
+			},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "6080604052348015600e575f5ffd5b50600436106026575f3560e01c80631dda654114602a575b5f5ffd5b60306032565b005b56fea264697066735822122057ffe84a6e94e2eafe4e9a6af2c29df61bd092a4f548fca57c6ddfd6b3c65b9464736f6c634300081e0033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xE JUMPI PUSH0 PUSH0 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH1 0x26 JUMPI PUSH0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x1DDA6541 EQ PUSH1 0x2A JUMPI JUMPDEST PUSH0 PUSH0 REVERT JUMPDEST PUSH1 0x30 PUSH1 0x32 JUMP JUMPDEST STOP JUMPDEST JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 JUMPI SELFDESTRUCT 0xE8 BLOBBASEFEE PUSH15 0x94E2EAFE4E9A6AF2C29DF61BD092A4 CREATE2 BASEFEE 0xFC 0xA5 PUSH29 0x6DDFD6B3C65B9464736F6C634300081E00330000000000000000000000 ",
+			"sourceMap": "110:98:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;144:62;;;:::i;:::-;;;:::o"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "21200",
+				"executionCost": "73",
+				"totalCost": "21273"
+			},
+			"external": {
+				"createSimpleStorageContract()": "121"
+			}
+		},
+		"methodIdentifiers": {
+			"createSimpleStorageContract()": "1dda6541"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [],
+			"name": "createSimpleStorageContract",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}

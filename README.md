@@ -1,50 +1,55 @@
-# Remix IDE Blank Template
+# Remix-Storage-factory
 
-Welcome to your new **Remix IDE Blank Workspace**!
 
-This workspace has been generated using the "Blank Template" option in Remix IDE. It starts with only minimal configuration files, giving you full control to build your project from scratch.
-
----
-
-## What's Included?
-
-- **`remix.config.json`**: Default Remix IDE workspace configuration.
-- **`.prettierrc.json`**: Basic Prettier formatting rules for code consistency.
-
-No contract files, folders, or sample code are included.
-
----
-
-## Getting Started
-
-1. **Create Files & Folders**
-
-   - Add new Solidity files, scripts, or folders as needed for your project.
-   - You can organize your workspace structure in any way you like.
-
-2. **Setup Project Settings** (Optional)
-
-   - Modify `remix.config.json` or add additional configuration files as your project grows.
-
-3. **Write & Compile Smart Contracts**
-
-   - Use the **Solidity Compiler** and **Deploy & Run Transactions** plugins (available in Remix IDE's left sidebar) to develop and test your contracts.
-
-4. **(Optional) Initialize Git**
-
-   - If you checked "Initialize as a Git repository" during workspace creation, you can start committing your code immediately.
-
+1. **Continuation of https://github.com/romalopes/foundry_simple_storage_f23**
+   - Simple storage just store number and people
+   
 ---
 
 ## Useful Resources
 
-- [Remix IDE Documentation](https://remix-ide.readthedocs.io/)
-- [Solidity Language Documentation](https://docs.soliditylang.org/)
-- [Remix IDE Community Forum](https://forum.remix.ethereum.org/)
+You can follow along with the video course from here.
 
----
+Introduction
+You can find the code for this section in the Remix Storage Factory Github repository. In these nine lessons, we'll work with three new contracts:
 
-Happy coding! 🚀 
+SimpleStorage.sol - the contract we build in the previous section, with some modifications
 
-_Remix IDE Team_
+AddFiveStorage.sol - a child contract of SimpleStorage that leverages inheritance
 
+StorageFactory.sol - a contract that will deploy a SimpleStorage contract and interact with it
+
+Section overview
+contract StorageFactory {
+    SimpleStorage[] public listOfSimpleStorageContracts;
+​
+    function createSimpleStorageContract() public {};
+    function sfStore(uint256 _simpleStorageIndex, uint256 _simpleStorageNumber) public {};
+    function sfGet(uint256 _simpleStorageIndex) public view returns (uint256) {}
+}
+After deploying StorageFactory and executing its function createSimpleStorageContract, we can observe a new transaction appear in the Remix terminal. It's a deployment transaction of the SimpleStorage contract, executed by the StorageFactory contract.
+
+It's possible to interact with this newly deployed SimpleStorage via the store function. We'll do this by using the sfStore function from the StorageFactory contract. This function accepts two parameters: the index of a deployed SimpleStorage contract, which will be '0' since we just deployed one contract, and the value of a favoriteNumber.
+
+The sfGet function, when given the input '0', will indeed return the number provided by the previous function. The address of the SimpleStorage contract can then be retrieved by clicking on the get function listOfSimpleStorageContracts.
+
+Conclusion
+The StorageFactory contract manages numerous instances of an external contract SimpleStorage. It provides functionality to deploy new contract instances dynamically and allows for the storage and retrieval of values from each instance. These instances are maintained and organized within an array, enabling efficient tracking and interaction.
+
+🧑‍💻 Test yourself
+📕 What is the primary role of the StorageFactory contract?
+
+📕 Why is it important to specify the index when calling the sfStore function?
+
+Storage Factory Introduction
+Introduction to deploying and interacting with contracts, focusing on Remix Storage Factory. The lesson involves working with 'SimpleStorage.sol', 'AddFiveStorage.sol', and 'StorageFactory.sol', demonstrating how other contracts can deploy and interact with new contracts.
+
+
+Previous lesson
+
+
+Next lesson
+
+
+Solidity Smart Contract Developer
+Solidity Smart Contract 

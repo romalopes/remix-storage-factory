@@ -1,8 +1,13 @@
 {
-  "SimpleStorage.sol": {
+  "StorageFactory.sol": {
+    "./SimpleStorage.sol": "SimpleStorage.sol",
     "__sources__": {
+      "StorageFactory.sol": {
+        "content": "//  SPDX-License-Identifier: MIT\npragma solidity 0.8.30;\n\nimport {SimpleStorage} from \"./SimpleStorage.sol\";\n\ncontract StorageFactory {\n    SimpleStorage[] public listOfSimpleStorages;\n\n    function createSimpleStorageContract() public {\n        SimpleStorage simpleStorage = new SimpleStorage();\n        listOfSimpleStorages.push(simpleStorage);\n    }\n\n    function stSore(uint256 _contractIndex, uint256 _number) public {\n        listOfSimpleStorages[_contractIndex].store(_number);\n        // SimpleStorage simpleStorage = SimpleStorage(listOfSimpleStorages[_contractIndex]);\n        // simpleStorage.store(_number);\n    }\n\n    function stGet(uint256 _contractIndex) view public returns (uint256){\n        return listOfSimpleStorages[_contractIndex].retrieveFavoriteNumbe();\n    }\n}\n\n",
+        "file": "StorageFactory.sol"
+      },
       "SimpleStorage.sol": {
-        "content": "//  SPDX-License-Identifier: MIT\npragma solidity 0.8.30;\n\ncontract SimpleStorage {\n    uint256 public favoriteNumber;\n\n    struct Person {\n        uint256 favoriteNumber;\n        string name;\n    }\n\n    function store(uint256 _favoriteNumber) public virtual {\n        favoriteNumber = _favoriteNumber;\n    }\n\n    // uint256[] public anArray;\n    Person[] public listOfPeople;\n\n    mapping(string => uint256) public nameToFavoriteNumber;\n\n    function retrieve() public view returns (uint256) {\n        return favoriteNumber;\n    }\n\n    function addPerson(string memory _name, uint256 _favoriteNumber) public {\n        listOfPeople.push(Person(_favoriteNumber, _name));\n        nameToFavoriteNumber[_name] = _favoriteNumber;\n    }\n}",
+        "content": "//  SPDX-License-Identifier: MIT\npragma solidity 0.8.30;\n\ncontract SimpleStorage {\n    uint256 public favoriteNumber;\n\n    struct Person {\n        uint256 favoriteNumber;\n        string name;\n    }\n\n    function store(uint256 _favoriteNumber) public virtual {\n        favoriteNumber = _favoriteNumber;\n    }\n\n    // uint256[] public anArray;\n    Person[] public listOfPeople;\n\n    mapping(string => uint256) public nameToFavoriteNumber;\n\n    function retrieveFavoriteNumbe() public view returns (uint256) {\n        return favoriteNumber;\n    }\n\n    function addPerson(string memory _name, uint256 _favoriteNumber) public {\n        listOfPeople.push(Person(_favoriteNumber, _name));\n        nameToFavoriteNumber[_name] = _favoriteNumber;\n    }\n}",
         "file": "SimpleStorage.sol"
       }
     }
